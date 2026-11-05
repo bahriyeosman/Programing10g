@@ -1,0 +1,37 @@
+string input = Console.ReadLine();
+List <string> textnums = input.Split(' '),To.List();
+
+
+ List <int> numbers = new List<int>();
+foreach (string number in textnums) 
+{
+    int number = int.Parse(textnums);
+    numbers.Add(number);
+}
+
+foreach (int number in numbers)
+{
+    Console.WriteLine(numbers);
+}
+Console.WriteLine( " broi na vsicki cusla:" +numbers.Count);
+ 
+List<int> filteredNumbers = new List<int>();
+foreach (int number in numbers)
+{
+    if (number > 0 && number % 2 == 0 && !filteredNumbers.Contains(number)) 
+    { 
+    filteredNumbers.Add(number);
+
+    }
+ }
+
+string result = string.Join(",", filteredNumbers);
+Console.WriteLine("filtrirani cisla "+ result);
+
+int sum = 0;
+foreach (int number in filteredNumbers)
+{
+  sum = sum + number;     
+}
+Console.WriteLine("broi filtrirani cisla " + filteredNumbers);
+Console.WriteLine("suma"+ sum);
